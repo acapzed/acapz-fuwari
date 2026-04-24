@@ -1,6 +1,6 @@
 ---
 title: First post
-published: 2026.04.24
+published: 2026-04-24
 description: 첫 블로그 실패 후 회고 및 다짐
 tags: [Essay]
 category: Essay
