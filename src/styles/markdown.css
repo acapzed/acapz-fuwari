@@ -117,5 +117,11 @@
         overflow-x: auto;
         margin: 1em 0;
     }
-    
+
+    img[src*="img.shields.io"] {
+        display: inline-block;
+        margin: 0 0.25rem 0.25rem 0;
+        cursor: default;
+    }
+
 }
