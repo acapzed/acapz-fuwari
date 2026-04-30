@@ -1,5 +1,5 @@
 ---
-title: 이리 메라찍음
+title: "이리 메라찍음"
 published: 2026-04-26
 description: "히히"
 image: "./image.png"
