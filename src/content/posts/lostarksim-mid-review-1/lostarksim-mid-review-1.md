@@ -1,7 +1,7 @@
 ---
-title: "1. 로아시뮬을 만들어보자"
+title: "로아시뮬 회고 1 - 기획과 초기 설계"
 published: 2026-04-29
-description: "로스트아크 시뮬레이터 중간 회고"
+description: "왜 로스트아크 시뮬레이터가 필요했는지, 유사 서비스 조사, 그리고 첫 설계에서 뭘 삽질했는지"
 image: "./lostarksim_title.svg"
 tags: [Project, Dev, Lostarksim]
 category: Project
