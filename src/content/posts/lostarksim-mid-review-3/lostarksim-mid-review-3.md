@@ -1,6 +1,6 @@
 ---
 title: "로아시뮬 회고 3 - 시뮬레이션 엔진 만들기"
-published: 2026-05-07"
+published: 2026-05-07
 description: "성능, 성능을 보자"
 image: "./lostarksim_title.svg"
 tags: [Project, Dev, Lostarksim]
