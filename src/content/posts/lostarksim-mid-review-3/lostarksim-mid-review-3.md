@@ -5,7 +5,7 @@ description: "성능, 성능을 보자"
 image: "./lostarksim_title.svg"
 tags: [Project, Dev, Lostarksim]
 category: Project
-draft: true
+draft: false
 ---
 
 본격적으로 메인 기능인 시뮬레이터를 만들자!
