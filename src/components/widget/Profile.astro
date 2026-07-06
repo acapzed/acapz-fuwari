@@ -1,11 +1,39 @@
 ---
 import { Icon } from "astro-icon/components";
-import avatarVideo from "../../assets/images/silverwolf-avatar.mp4";
+import normaAvatar1 from "../../assets/images/norma-1.mp4";
+import normaAvatar2 from "../../assets/images/norma-2.mp4";
 import { profileConfig } from "../../config";
 import { url } from "../../utils/url-utils";
 import ImageWrapper from "../misc/ImageWrapper.astro";
 
 const config = profileConfig;
+const avatars = [config.avatar || ""].flat().filter(Boolean);
+const avatar = avatars[0] || "";
+const isVideoAvatar =
+	avatars.length > 0 && avatars.every((item) => /\.(mp4|webm|ogg)([?#].*)?$/i.test(item));
+
+const localVideoAssets = new Map([
+	["assets/images/norma-1.mp4", normaAvatar1],
+	["assets/images/norma-2.mp4", normaAvatar2],
+]);
+const avatarVideoSrcList = [];
+for (const item of avatars) {
+	if (!isVideoAvatar) {
+		break;
+	}
+
+	const isLocalAvatar = !item.startsWith("/") && !item.startsWith("http://") && !item.startsWith("https://") && !item.startsWith("data:");
+	let src = item;
+	if (isLocalAvatar) {
+		const asset = localVideoAssets.get(item);
+		if (!asset) {
+			console.error(`\n[ERROR] Video file not found: src/${item}`);
+			continue;
+		}
+		src = asset;
+	}
+	avatarVideoSrcList.push(src.startsWith("/") ? url(src) : src);
+}
 ---
 <div class="card-base p-3">
     <a aria-label="Go to About Page" href={url('/about/')}
@@ -17,14 +45,16 @@ const config = profileConfig;
                   class="transition opacity-0 scale-90 group-hover:scale-100 group-hover:opacity-100 text-white text-5xl">
             </Icon>
         </div>
-        <video
-            src={avatarVideo}
-            autoplay
-            loop
-            muted
-            playsinline
-            class="mx-auto lg:w-full h-full lg:mt-0 object-cover aspect-square"
-        ></video>
+        {isVideoAvatar && <video
+                src={avatarVideoSrcList[0]}
+                data-avatar-videos={JSON.stringify(avatarVideoSrcList)}
+                autoplay
+                loop
+                muted
+                playsinline
+                class="mx-auto lg:w-full h-full lg:mt-0 object-cover aspect-square"
+        ></video>}
+        {!isVideoAvatar && <ImageWrapper src={avatar} class="mx-auto lg:w-full h-full lg:mt-0 object-cover aspect-square" alt={config.name}/>}
     </a>
     <div class="px-2">
         <div class="font-bold text-xl text-center mb-1 dark:text-neutral-50 transition">{config.name}</div>
@@ -45,3 +75,11 @@ const config = profileConfig;
     </div>
 </div>
 
+<script>
+	for (const video of document.querySelectorAll<HTMLVideoElement>("video[data-avatar-videos]")) {
+		const sources = JSON.parse(video.dataset.avatarVideos || "[]") as string[];
+		if (sources.length > 1) {
+			video.src = sources[Math.floor(Math.random() * sources.length)];
+		}
+	}
+</script>
