@@ -10,7 +10,8 @@ const config = profileConfig;
 const avatars = [config.avatar || ""].flat().filter(Boolean);
 const avatar = avatars[0] || "";
 const isVideoAvatar =
-	avatars.length > 0 && avatars.every((item) => /\.(mp4|webm|ogg)([?#].*)?$/i.test(item));
+	avatars.length > 0 &&
+	avatars.every((item) => /\.(mp4|webm|ogg)([?#].*)?$/i.test(item));
 
 const localVideoAssets = new Map([
 	["assets/images/norma-1.mp4", normaAvatar1],
@@ -22,7 +23,11 @@ for (const item of avatars) {
 		break;
 	}
 
-	const isLocalAvatar = !item.startsWith("/") && !item.startsWith("http://") && !item.startsWith("https://") && !item.startsWith("data:");
+	const isLocalAvatar =
+		!item.startsWith("/") &&
+		!item.startsWith("http://") &&
+		!item.startsWith("https://") &&
+		!item.startsWith("data:");
 	let src = item;
 	if (isLocalAvatar) {
 		const asset = localVideoAssets.get(item);
