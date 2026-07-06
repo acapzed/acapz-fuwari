@@ -54,9 +54,7 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/norma-1.mp4", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	avatarVideos: [
-		"assets/images/norma-1.mp4", "assets/images/norma-2.mp4"
-	],
+	avatarVideos: ["assets/images/norma-1.mp4", "assets/images/norma-2.mp4"],
 	name: "Minjea Kim | 김민재",
 	bio: "Make something fun.",
 	links: [

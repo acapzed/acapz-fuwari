@@ -8,9 +8,12 @@ const config = profileConfig;
 
 const avatar = config.avatar || "";
 const avatarVideos = config.avatarVideos ?? [];
-const videoAssets = import.meta.glob<{ default: string }>("../../assets/images/*.{mp4,webm,ogg}", {
-	eager: true,
-});
+const videoAssets = import.meta.glob<{ default: string }>(
+	"../../assets/images/*.{mp4,webm,ogg}",
+	{
+		eager: true,
+	},
+);
 
 function resolveAvatarSrc(item: string) {
 	const isLocalAvatar =
