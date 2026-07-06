@@ -1,44 +1,40 @@
 ---
 import { Icon } from "astro-icon/components";
-import normaAvatar1 from "../../assets/images/norma-1.mp4";
-import normaAvatar2 from "../../assets/images/norma-2.mp4";
 import { profileConfig } from "../../config";
 import { url } from "../../utils/url-utils";
 import ImageWrapper from "../misc/ImageWrapper.astro";
 
 const config = profileConfig;
-const avatars = [config.avatar || ""].flat().filter(Boolean);
-const avatar = avatars[0] || "";
-const isVideoAvatar =
-	avatars.length > 0 &&
-	avatars.every((item) => /\.(mp4|webm|ogg)([?#].*)?$/i.test(item));
 
-const localVideoAssets = new Map([
-	["assets/images/norma-1.mp4", normaAvatar1],
-	["assets/images/norma-2.mp4", normaAvatar2],
-]);
-const avatarVideoSrcList = [];
-for (const item of avatars) {
-	if (!isVideoAvatar) {
-		break;
-	}
+const avatar = config.avatar || "";
+const avatarVideos = config.avatarVideos ?? [];
+const videoAssets = import.meta.glob<{ default: string }>("../../assets/images/*.{mp4,webm,ogg}", {
+	eager: true,
+});
 
+function resolveAvatarSrc(item: string) {
 	const isLocalAvatar =
 		!item.startsWith("/") &&
 		!item.startsWith("http://") &&
 		!item.startsWith("https://") &&
 		!item.startsWith("data:");
-	let src = item;
-	if (isLocalAvatar) {
-		const asset = localVideoAssets.get(item);
-		if (!asset) {
-			console.error(`\n[ERROR] Video file not found: src/${item}`);
-			continue;
-		}
-		src = asset;
+	if (!isLocalAvatar) return item.startsWith("/") ? url(item) : item;
+
+	const asset = videoAssets[`../../${item}`];
+	if (!asset) {
+		console.error(`\n[ERROR] Video file not found: src/${item}`);
+		return "";
 	}
-	avatarVideoSrcList.push(src.startsWith("/") ? url(src) : src);
+	return asset.default;
 }
+
+const avatarVideoSrcList = avatarVideos.map(resolveAvatarSrc).filter(Boolean);
+
+const hasAvatarVideos = avatarVideoSrcList.length > 0;
+
+const isVideoAvatar =
+	typeof avatar === "string" && /\.(mp4|webm|ogg)([?#].*)?$/i.test(avatar);
+const avatarVideoSrc = isVideoAvatar ? resolveAvatarSrc(avatar) : "";
 ---
 <div class="card-base p-3">
     <a aria-label="Go to About Page" href={url('/about/')}
@@ -50,16 +46,34 @@ for (const item of avatars) {
                   class="transition opacity-0 scale-90 group-hover:scale-100 group-hover:opacity-100 text-white text-5xl">
             </Icon>
         </div>
-        {isVideoAvatar && <video
-                src={avatarVideoSrcList[0]}
-                data-avatar-videos={JSON.stringify(avatarVideoSrcList)}
-                autoplay
-                loop
-                muted
-                playsinline
-                class="mx-auto lg:w-full h-full lg:mt-0 object-cover aspect-square"
-        ></video>}
-        {!isVideoAvatar && <ImageWrapper src={avatar} class="mx-auto lg:w-full h-full lg:mt-0 object-cover aspect-square" alt={config.name}/>}
+        {
+          hasAvatarVideos ? (
+            <video
+              src={avatarVideoSrcList[0]}
+              data-avatar-videos={JSON.stringify(avatarVideoSrcList)}
+              autoplay
+              loop
+              muted
+              playsinline
+              class="mx-auto lg:w-full h-full lg:mt-0 object-cover aspect-square"
+            />
+          ) : avatarVideoSrc ? (
+            <video
+              src={avatarVideoSrc}
+              autoplay
+              loop
+              muted
+              playsinline
+              class="mx-auto lg:w-full h-full lg:mt-0 object-cover aspect-square"
+            />
+          ) : (
+            <ImageWrapper
+              src={avatar}
+              class="mx-auto lg:w-full h-full lg:mt-0 object-cover aspect-square"
+              alt={config.name}
+            />
+          )
+        }
     </a>
     <div class="px-2">
         <div class="font-bold text-xl text-center mb-1 dark:text-neutral-50 transition">{config.name}</div>
