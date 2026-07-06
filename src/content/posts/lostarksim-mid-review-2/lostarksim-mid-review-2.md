@@ -1,7 +1,7 @@
 ---
 title: "로아시뮬 회고 2 - 전투정보실 만들어보기"
 published: 2026-04-30
-description: "왜 API를 그따구로 넘겨주는거야"
+description: "서비스를 위한 웹서비스 배우기"
 image: "./lostarksim_title.svg"
 tags: [Project, Dev, Lostarksim]
 category: Project
@@ -16,7 +16,7 @@ draft: false
 
 # 파서랑 놀기
 
-대충 읽어보니, 프론트에서 넘겨준 코드 그-대로 띄우면 되도록 주고있었다.
+대충 읽어보니, 프론트에서 넘겨준 코드 그대로 띄우면 되도록 주고있었다.
 
 왜 api 서비스가 프론트가 해야할 일을 대신해서 데이터를 활용하는 개발자들이 왜 2차 파싱을 해야하는지는 모르겠다...
 
