@@ -1,7 +1,7 @@
 ---
 title: "로아시뮬 회고 1 - 기획과 초기 설계"
 published: 2026-04-29
-description: "시뮬레이터를 만들게 된 계기"
+description: "로아 시뮬레이터를 만들게 된 계기와 초기 설계 과정에서 했던 고민들"
 image: "./lostarksim_title.svg"
 tags: [Project, Dev, Lostarksim]
 category: Project

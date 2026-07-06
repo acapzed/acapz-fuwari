@@ -5,11 +5,19 @@
 - 시뮬레이터와 재밌는 서비스를 만드는 것을 좋아합니다.
 - 서브컬쳐 게임과 RPG를 좋아합니다.
 
+# Mini Portpolio
+
+https://acapzed.github.io
+
 # Projects
 
 - **Lostark Simulator** - A web based DPS simulator for Lost Ark, built with Rust/WebAssembly for high-performance client-side computation. (lostarksim.com) / current private
 
 ::github{repo="acapzed/lostark-simulator"}
+
+- **이잘키 정오표** - Browser extension for generating Hoyoverse-game build benchmark reports from HoYoLAB pages.
+
+::github{repo="acapzed/jalkiwotda-hoyoverse"}
 
 - **Gumibab** - A Chrome extension for diet management, 
 built during SSAFY Gumi Campus.

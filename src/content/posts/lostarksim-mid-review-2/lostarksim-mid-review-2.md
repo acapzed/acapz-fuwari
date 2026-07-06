@@ -1,7 +1,7 @@
 ---
 title: "로아시뮬 회고 2 - 전투정보실 만들어보기"
 published: 2026-04-30
-description: "서비스를 위한 웹서비스 배우기"
+description: "전투정보실 기능을 만들며 웹 서비스 구조와 데이터 처리 방식을 익힌 과정"
 image: "./lostarksim_title.svg"
 tags: [Project, Dev, Lostarksim]
 category: Project

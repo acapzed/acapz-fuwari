@@ -1,7 +1,7 @@
 ---
 title: "로아시뮬 회고 3 - 시뮬레이션 엔진 만들기"
 published: 2026-05-07
-description: "성능을 올리기 위한 스택변경"
+description: "시뮬레이션 엔진을 구현하며 성능, 상태 관리, 계산 구조를 어떻게 다뤘는지"
 image: "./lostarksim_title.svg"
 tags: [Project, Dev, Lostarksim]
 category: Project
