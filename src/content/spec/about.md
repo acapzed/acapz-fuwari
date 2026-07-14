@@ -17,10 +17,14 @@ https://acapzed.github.io
 
 - **이잘키 정오표** - Browser extension for generating Hoyoverse-game build benchmark reports from HoYoLAB pages.
 
+[![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/ilgdadofigikokamdfgamikpdgbhkgeo)](https://chromewebstore.google.com/detail/ilgdadofigikokamdfgamikpdgbhkgeo?utm_source=item-share-cb)
+
 ::github{repo="acapzed/jalkiwotda-hoyoverse"}
 
 - **Gumibab** - A Chrome extension for diet management, 
 built during SSAFY Gumi Campus.
+
+[![Chrome Web Store Users](https://img.shields.io/chrome-web-store/users/bjlhbdemdpjgmkpndphcfhnnhdknaple)](https://chromewebstore.google.com/detail/bjlhbdemdpjgmkpndphcfhnnhdknaple)
 
 ::github{repo="acapzed/gumibab"}
 
