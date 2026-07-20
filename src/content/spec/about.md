@@ -35,7 +35,18 @@ into a structured plan and mindmap.
 
 - [한양대학교 생명공학과 졸업](http://bioeng.hanyang.ac.kr) / 2017.03 - 2024.06
 - [네이버 부스트캠프 웹·모바일 9기](https://boostcamp.connect.or.kr) / 2024.06 - 2024.08
-- [삼성청년SW·AI아카데미(SSAFY) 14기](https://www.ssafy.com) / 2025.07 - 진행중
+- [삼성청년SW·AI아카데미(SSAFY) 14기](https://www.ssafy.com) / 2025.07 - 2026.07
+
+# Awards 
+
+- **내 요리를 부탁해 — 3위 장려상** 
+    - SSAFY 특화 프로젝트 
+    - 2인 협동 정보 비대칭 요리 시뮬레이션 
+    - Unity 기반
+- **우주오락실 — 3위 장려상** 
+    - SSAFY 자율 프로젝트 
+    - 최대 100명이 동시에 참여하는 실시간 멀티플레이 미니게임 파티 플랫폼 
+    - STOMP와 Redis Pub/Sub 기반 실시간 동기화
 
 # Stacks
 
