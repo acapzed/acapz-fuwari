@@ -41,12 +41,10 @@ into a structured plan and mindmap.
 
 - **내 요리를 부탁해 — 3위 장려상** 
     - SSAFY 특화 프로젝트 
-    - 2인 협동 정보 비대칭 요리 시뮬레이션 
-    - Unity 기반
+    - Unity 기반 2인 협동 정보 비대칭 요리 시뮬레이션 
 - **우주오락실 — 3위 장려상** 
     - SSAFY 자율 프로젝트 
     - 최대 100명이 동시에 참여하는 실시간 멀티플레이 미니게임 파티 플랫폼 
-    - STOMP와 Redis Pub/Sub 기반 실시간 동기화
 
 # Stacks
 
