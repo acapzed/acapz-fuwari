@@ -29,6 +29,11 @@ into a structured plan and mindmap.
 
 ::github{repo="acapzed/sharp"}
 
+- **Waifu** - Waifu is a digital character companion platform that makes anime- and game-inspired characters feel like they are actually living inside the user's devices. / current private
+
+::github{repo="acapzed/waifu"}
+
+
 더 많은 프로젝트 진행중!
 
 # Experiences
