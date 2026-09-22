@@ -1,7 +1,7 @@
 ---
 title: First post
 published: 2026-04-24
-description: 
+description: first post
 tags: [Essay]
 category: Essay
 draft: true
