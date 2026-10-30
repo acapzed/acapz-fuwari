@@ -4,7 +4,7 @@ published: 2026-04-24
 description: first post
 tags: [Essay]
 category: Essay
-draft: 
+draft: false
 ---
 
 포트폴리오를 한창 작성하면서, 지인들이 웹사이트로 된 포트폴리오를 많이 만들길래 '나도 하나 만들어볼까' 하는 생각에 개인도메인을 하나 구매했다.
