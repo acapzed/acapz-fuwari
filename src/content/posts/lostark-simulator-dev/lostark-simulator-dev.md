@@ -1,7 +1,7 @@
 ---
 title: "로아 시뮬레이터 개발기"
 published: 2026-04-29
-description: "개고생한 기록"
+description: ""
 image: "./lostarksim_title.svg"
 tags: [Project, Dev, Lostarksim]
 category: Project
